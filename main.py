@@ -14,7 +14,8 @@ print(f"Loaded API_URL: {API_URL}")
 
 def make_request():
     headers = {
-        "Authorization": f"Bearer {SECRET_KEY}",  
+        "Authorization": f"Bearer {SECRET_KEY}", 
+        "Accept": "application/json",
         "Content-Type": "application/json", 
         "CallTreeId": str(uuid.uuid4()),    
     }
@@ -22,13 +23,13 @@ def make_request():
     payload = {
         "store":"724",
         "fulfillmentType":"FSD",
-        "articles":[ {"mgb": "82408001002"}
+        "articles":[ {"mgb": "208740001001"}
         ]
     }
 
     try:
         
-        response = requests.get(API_URL, headers=headers, json=payload)
+        response = requests.post(API_URL, headers=headers, json=payload)
 
        
         if response.status_code == 200:
