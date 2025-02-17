@@ -50,3 +50,7 @@ ENV/
 
 .env
 .vscode/
+
+.test
+.enzo_data.csv
+.bquxjob_20e9ed45_195134caa6c.csv
